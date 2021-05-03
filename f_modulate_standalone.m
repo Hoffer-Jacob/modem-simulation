@@ -1,4 +1,4 @@
-function [x, y] = f_modulate(app)
+function [mod_sig, t] = f_modulate_standalone(f_c, f_m, v_c, v_m)
 %F_MODULATE Modulate an AM signal with lower, carrier, and upper components
 %   Inputs
 %       f_c: carrier frequency
