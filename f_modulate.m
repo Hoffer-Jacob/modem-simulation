@@ -1,4 +1,4 @@
-function [x, y] = f_modulate(app)
+function mod_sig = f_modulate(app)
 %F_MODULATE Modulate an AM signal with lower, carrier, and upper components
 %   Inputs
 %       f_c: carrier frequency
@@ -10,7 +10,12 @@ function [x, y] = f_modulate(app)
 %       t:       time
 
 %% Variables
-t = (0:0.1:1500) * 1e-6;
+f_c = app.CarrierkHzEditField.Value;
+f_m = HarmonickHzEditField.Value;
+t = app.t;
+
+v_c = 1;
+v_m = 0.5;
 
 %% Components
 carrier = v_c * cos(2 * pi * f_c .* t);
